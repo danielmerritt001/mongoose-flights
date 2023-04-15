@@ -1,0 +1,54 @@
+- AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
+    - `ALL FLIGHTS`, and
+    - `ADD FLIGHT`
+*Use a series of partials with css to always display nav bars
+
+- AAU, I want to view a list of all flights (index view) that displays each flight’s airline, airport, flight no., and departure date/time.
+
+* create an flights/index.ejs with a forEach loop for the different flight data as a table
+GET /flights
+CRUD Operation: "Read all flights"
+controller action: index
+render/redirect: res.render('flights/index')
+
+- AAU, I want to create a flight by entering the information on a `new` view that has a form. When I submit the form I should be taken back to all the flights.
+
+* Action 1: 
+GET /flights/new
+Create a button in the nav to enable the user to navigate to flights/new.
+Create a flights/new.ejs with a form with a submit button that navs to flights
+controller action: new
+render/redirect: res.render('flights/new)
+
+* Action 2: post the new data
+POST /flights
+CRUD OP: create a new blog
+controller action: create
+render/redirect: res.redirect('/flights')
+
+- AAU, I want to be able to delete a flight from the list on the `index` view.
+* create a delete button in the index view forEach loop
+DELETE: blogs/:blogId
+controller action: delete
+res.redirect('/flights')
+
+- AAU, I want to be able to click on a flight to view its details on a `show` view.
+
+* Create a flights/show.ejs with functions to display specific flight info
+GET /flights/:flightId
+controller action: show
+res.render('flights/show')
+
+- AAU, I want to be able to click a button WITHIN the `show` view that brings me to an `edit` view where I can adjust a flight’s details.  When I save these changes, they should persist to the database and redirect me back to the flight’s `show` view.
+
+* Action 1: Create and navigate to an update form
+add a button in flights/show.ejs that sends to /flights/:flightsId/edit
+create an flights/edit ejs with a form to update the information. Include the value so they have the information previously added to correct. Mostly copy the flights show tab and adjust. the submit button should send to /flights/show
+GET /flights/:flightId/edit
+controller action: edit
+res.render('flights/edit')
+
+Action 2: update and return to show page
+PUT /flights
+controller function: update
+res.redirect('/flights/show')
