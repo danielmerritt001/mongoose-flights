@@ -1,9 +1,5 @@
 
 TODO:
-- AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
-    - `ALL FLIGHTS`, and
-    - `ADD FLIGHT`
-*Use a series of partials with css to always display nav bars
 
 - AAU, I want to view a list of all flights (index view) that displays each flight’s airline, airport, flight no., and departure date/time.
 
@@ -55,4 +51,8 @@ PUT /flights
 controller function: update
 res.redirect('/flights/show')
 
-DONE:
+DONE
+- AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
+    - `ALL FLIGHTS`, and
+    - `ADD FLIGHT`
+*Use a series of partials with css to always display nav bars
