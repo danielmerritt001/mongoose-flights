@@ -1,3 +1,5 @@
+
+TODO:
 - AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
     - `ALL FLIGHTS`, and
     - `ADD FLIGHT`
@@ -52,3 +54,5 @@ Action 2: update and return to show page
 PUT /flights
 controller function: update
 res.redirect('/flights/show')
+
+DONE:

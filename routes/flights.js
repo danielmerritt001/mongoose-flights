@@ -4,7 +4,7 @@ const router = Router()
 
 // GET localhost:3000/users
 router.get('/', function(req, res) {
-  res.send('respond with a resource')
+  res.render('flights/index', { title: 'All Flights' })
 })
 
 export { router }
