@@ -1,34 +1,4 @@
-
 TODO:
-
-- AAU, I want to view a list of all flights (index view) that displays each flight’s airline, airport, flight no., and departure date/time.
-
-* create an flights/index.ejs with a forEach loop for the different flight data as a table
-GET /flights
-CRUD Operation: "Read all flights"
-controller action: index
-render/redirect: res.render('flights/index')
-
-- AAU, I want to create a flight by entering the information on a `new` view that has a form. When I submit the form I should be taken back to all the flights.
-
-* Action 1: 
-GET /flights/new
-Create a button in the nav to enable the user to navigate to flights/new.
-Create a flights/new.ejs with a form with a submit button that navs to flights
-controller action: new
-render/redirect: res.render('flights/new)
-
-* Action 2: post the new data
-POST /flights
-CRUD OP: create a new blog
-controller action: create
-render/redirect: res.redirect('/flights')
-
-- AAU, I want to be able to delete a flight from the list on the `index` view.
-* create a delete button in the index view forEach loop
-DELETE: blogs/:blogId
-controller action: delete
-res.redirect('/flights')
 
 - AAU, I want to be able to click on a flight to view its details on a `show` view.
 
@@ -56,3 +26,32 @@ DONE
     - `ALL FLIGHTS`, and
     - `ADD FLIGHT`
 *Use a series of partials with css to always display nav bars
+
+
+- AAU, I want to view a list of all flights (index view) that displays each flight’s airline, airport, flight no., and departure date/time.
+
+* create an flights/index.ejs with a forEach loop for the different flight data as a table
+GET /flights
+CRUD Operation: "Read all flights"
+controller action: index
+render/redirect: res.render('flights/index')
+
+- AAU, I want to create a flight by entering the information on a `new` view that has a form. When I submit the form I should be taken back to all the flights.
+
+* Action 1: 
+GET /flights/new
+Create a button in the nav to enable the user to navigate to flights/new.
+Create a flights/new.ejs with a form with a submit button that navs to flights
+controller action: new
+render/redirect: res.render('flights/new)
+
+* Action 2: post the new data
+POST /flights
+controller action: create
+render/redirect: res.redirect('/flights')
+
+- AAU, I want to be able to delete a flight from the list on the `index` view.
+* create a delete button in the index view forEach loop
+DELETE: blogs/:blogId
+controller action: delete
+res.redirect('/flights')
