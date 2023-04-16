@@ -4,23 +4,23 @@
 
 <main>
   <h1><%= title %></h1>
+  
   <section>
     <div>Flight #: </div>
+    
     <div>
       <%= flight.flightNo %>
     </div>
+    <div>Airline: </div>
+    <div><%= flight.airline %></div>
+    <div>Airport: </div>
+    <div><%= flight.airport %></div>
+    <div>Depart Date: </div>
+    <div><%= flight.departs %></div>
+    <a href="/flights/<%= flight._id %>/edit">
+      <button>Edit Flight</button>
+    </a>
   </section>
-  <form id="new-form" action="/flights" method="POST">
-    <label for="flightNo-input">Flight #:</label>
-    <input type="number" name="flightNo" id="flightNo-input">
-    <label for="airline-input">Airline:</label>
-    <input type="text" name="airline" id="airline-input">
-    <label for="airport-input">Airport:</label>
-    <input type="text" name="airport" id="airport-input">
-    <label for="departs-input">Departure Date:</label>
-    <input type="datetime-local" name="departs" id="departs-input">
-    <button type="submit">Add Flight</button>
-  </form>
 </main>
 
 <%- include("../partials/footer") %>

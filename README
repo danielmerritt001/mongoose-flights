@@ -1,12 +1,5 @@
 TODO:
 
-- AAU, I want to be able to click on a flight to view its details on a `show` view.
-
-* Create a flights/show.ejs with functions to display specific flight info
-GET /flights/:flightId
-controller action: show
-res.render('flights/show')
-
 - AAU, I want to be able to click a button WITHIN the `show` view that brings me to an `edit` view where I can adjust a flight’s details.  When I save these changes, they should persist to the database and redirect me back to the flight’s `show` view.
 
 * Action 1: Create and navigate to an update form
@@ -55,3 +48,10 @@ render/redirect: res.redirect('/flights')
 DELETE: blogs/:blogId
 controller action: delete
 res.redirect('/flights')
+
+- AAU, I want to be able to click on a flight to view its details on a `show` view.
+
+* Create a flights/show.ejs with functions to display specific flight info
+GET /flights/:flightId
+controller action: show
+res.render('flights/show')
