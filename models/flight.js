@@ -24,13 +24,11 @@ const flightSchema = new Schema({
     minlength: 10,
     maxlength: 9999,
   },
-  departs: {type: Date, 
+  departs: {
+    type: Date, 
     default: function() {
     // need to make this say next year. 
-    const today = new Date()
-    const nextYear = today.setFullYear(today.getFullYear() + 1)
-    const defaultDate = new Date().setFullYear(nextYear)
-    return defaultDate
+    return new Date()
     }
   },
   tickets: [ticketSchema]
