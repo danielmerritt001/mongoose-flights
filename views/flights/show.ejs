@@ -16,11 +16,43 @@
     <div>Airport: </div>
     <div><%= flight.airport %></div>
     <div>Depart Date: </div>
-    <div><%= flight.departs %></div>
+    <div><%= flight.departs.toLocaleDateString() %></div>
     <a href="/flights/<%= flight._id %>/edit">
       <button>Edit Flight</button>
     </a>
   </section>
+  <br>
+  <form 
+  id="add-seat-form"
+  action="/flights/<%= flight._id %>/tickets"
+  method="POST"
+>
+  <label for="content-textarea">Seat #:</label>
+  <input type="text" name="seat" id="flight-seat">
+  <label for="rating-select">Price:</label>
+  <input type="number" step=".01" name="price" id="flight-price">
+  <button type="submit">Add Seat</button>
+</form>
+  <% if (flight.tickets.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.tickets.forEach(function(ticket) { %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td>$<%= ticket.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Seats Added Yet.</h3>
+  <% } %>
 </main>
 
 <%- include("../partials/footer") %>
