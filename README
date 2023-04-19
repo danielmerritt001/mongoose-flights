@@ -55,3 +55,5 @@ res.redirect('/flights')
 GET /flights/:flightId
 controller action: show
 res.render('flights/show')
+
+value="<%= new Date().toISOString().slice(0,-8) %>"

@@ -1,4 +1,4 @@
-
+// Original fix to the next year date question
 let defaultEl = document.getElementById('departs-input')
 
 const defaultDate = new Date()
